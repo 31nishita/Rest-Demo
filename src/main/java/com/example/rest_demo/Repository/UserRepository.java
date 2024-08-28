@@ -1,0 +1,12 @@
+package com.example.rest_demo.Repository;
+
+import com.example.rest_demo.Model.UserEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
+
+public interface UserRepository extends JpaRepository<UserEntity,Integer> {
+    Optional<UserEntity>findByUserName(String userName);
+    Boolean existsByUserName(String userName);
+
+}
